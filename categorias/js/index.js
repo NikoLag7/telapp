@@ -43,11 +43,11 @@ var navigation = {
     "menu" : [
         {
             "nombre" : "inicio",
-            "href" : "index.html"
+            "href" : "../index.html"
         },
         {
             "nombre" : "Categorias",
-            "href" : "categorias"
+            "href" : "../categorias"
         },
         {
             "nombre" : "Contacto",
@@ -55,7 +55,7 @@ var navigation = {
         },
         {
             "nombre" : "Login",
-            "href" : "login"
+            "href" : "../login"
         }
     ]
 };
@@ -310,9 +310,9 @@ function head(data){
     var menuitem = '';
     $.each(data.menu, function (indexInArray, menu) {  
         if (menu.nombre != null){ 
-            menuitem += `<li class="nav-item"><a class="nav-link " href="${menu.nombre}">${menu.nombre}</a></li>`;
+            menuitem += `<li class="nav-item"><a class="nav-link " href="${menu.href}">${menu.nombre}</a></li>`;
         }else{
-            menuitem += `<li class="nav-item"><a class="nav-link " href="${menu.nombre}">vacío</a></li>`;    
+            menuitem += `<li class="nav-item"><a class="nav-link " href="${menu.href}">vacío</a></li>`;    
         }
     });
 
