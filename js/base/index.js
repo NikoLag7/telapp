@@ -42,16 +42,20 @@ var navigation = {
     "logo" : "assets/img/logo-principal.png",
     "menu" : [
         {
-            "nombre" : "inicio"
+            "nombre" : "inicio",
+            "href" : ""
         },
         {
-            "nombre" : "Ofertas"
+            "nombre" : "Productos",
+            "href" : ""
         },
         {
-            "nombre" : "Mis compras"
+            "nombre" : "Mis compras",
+            "href" : ""
         },
         {
-            "nombre" : "Login"
+            "nombre" : "Login",
+            "href" : ""
         }
     ]
 };
@@ -256,10 +260,10 @@ var form = {
 };
 
 var footer = {
-    "marca" : "sistematizar EF",
+    "marca" : "Textiles el Machetazo",
     "socialIcons" : {
-        "facebook" : "" ,
-        "instagram" :  "",
+        "facebook" : "https://www.facebook.com/profile.php?id=100064366075425" ,
+        "instagram" :  "https://www.instagram.com/telas_elmachetazo/?hl=es",
         "whatsapp" : ""}
 };
 
@@ -449,8 +453,7 @@ function section1(data) {
     $('#service-title').html(article.title);
     $('#service-image').html(serviceImage);
     $('#service-lgDescription').html(article.lgDescription);
-    $('#service-client-name').html(article.client.name);
-    $('#service-category').html(article.client.category);  
+      
  });
 
 // SECTION 3 ABOUT US 
@@ -556,18 +559,15 @@ $('#submitButton').click(function (e) {
 // FOOTER 
 
 function section6(data) {  
+console.log(data.socialIcons.facebook);
+ 
 
- $.each(data.socialIcons, function (indexInArray, value) { 
-
-    let icon = {
-        facebook : value.facebook != null ? value.facebook : "#",
-        instagram : value.instagram != null ? value.instagram : "#"
-    }
-    socialIcons = `<a class="btn btn-dark btn-social mx-2" href="${icon.facebook}" aria-label="Twitter"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="${icon.instagram}" aria-label="Facebook"><i class="fa-brands fa-instagram"></i></a>`
+    
+    socialIcons = `<a class="btn btn-dark btn-social mx-2" href="${data.socialIcons.facebook}" aria-label="Twitter"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="${data.socialIcons.instagram}" aria-label="Facebook"><i class="fa-brands fa-instagram"></i></a>`
                     
      $('#social-icons').html(socialIcons);
- });
+
 }
 $('#marca').html(footer.marca);
 
