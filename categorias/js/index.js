@@ -51,7 +51,7 @@ var navigation = {
         },
         {
             "nombre" : "Contacto",
-            "href" : ""
+            "href" : "../contacto"
         },
         {
             "nombre" : "Login",
